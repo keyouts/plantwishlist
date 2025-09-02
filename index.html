@@ -4,13 +4,31 @@
   <meta charset="UTF-8">
   <title>Plant Wishlist</title>
   <link rel="stylesheet" href="./style.css">
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Plant Wishlist</h1>
 
+    <!-- Invisible ARIA text for screen readers -->
+    <div class="sr-only" aria-hidden="false" id="wishlistDescription">
+      Enter the name of a plant and click "Add" to include it in your wishlist. You can also drag and drop items to reorder them.
+    </div>
+
     <div class="controls">
-      <input type="text" id="wishlistInput" placeholder="Add plant to wishlist">
+      <input type="text" id="wishlistInput" placeholder="Add plant to wishlist" aria-describedby="wishlistDescription">
       <button onclick="addItem()">Add</button>
     </div>
 
